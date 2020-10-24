@@ -13092,6 +13092,7 @@ div#notebook {
 <li><a href="#Conclusions">Conclustions</a>.</li>
 <li><a href="#Limitations-and-Issues">Limitations</a>.</li>
 </ul>
+<hr>
 
 </div>
 </div>
@@ -13105,7 +13106,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13421,7 +13422,7 @@ memory usage: 799.2+ KB
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Fat_Content&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Fat_Content&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13440,7 +13441,12 @@ memory usage: 799.2+ KB
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([&#39;Low Fat&#39;, &#39;Regular&#39;, &#39;low fat&#39;, &#39;LF&#39;, &#39;reg&#39;], dtype=object)</pre>
+<pre>Low Fat    5089
+Regular    2889
+LF          316
+reg         117
+low fat     112
+Name: Item_Fat_Content, dtype: int64</pre>
 </div>
 
 </div>
@@ -13508,7 +13514,7 @@ Name: Item_Visibility, Length: 8523, dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13527,10 +13533,23 @@ Name: Item_Visibility, Length: 8523, dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([&#39;Dairy&#39;, &#39;Soft Drinks&#39;, &#39;Meat&#39;, &#39;Fruits and Vegetables&#39;,
-       &#39;Household&#39;, &#39;Baking Goods&#39;, &#39;Snack Foods&#39;, &#39;Frozen Foods&#39;,
-       &#39;Breakfast&#39;, &#39;Health and Hygiene&#39;, &#39;Hard Drinks&#39;, &#39;Canned&#39;,
-       &#39;Breads&#39;, &#39;Starchy Foods&#39;, &#39;Others&#39;, &#39;Seafood&#39;], dtype=object)</pre>
+<pre>Fruits and Vegetables    1232
+Snack Foods              1200
+Household                 910
+Frozen Foods              856
+Dairy                     682
+Canned                    649
+Baking Goods              648
+Health and Hygiene        520
+Soft Drinks               445
+Meat                      425
+Breads                    251
+Hard Drinks               214
+Others                    169
+Starchy Foods             148
+Breakfast                 110
+Seafood                    64
+Name: Item_Type, dtype: int64</pre>
 </div>
 
 </div>
@@ -13577,7 +13596,7 @@ Name: Item_Visibility, Length: 8523, dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Outlet_Establishment_Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Outlet_Establishment_Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13596,7 +13615,16 @@ Name: Item_Visibility, Length: 8523, dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([1999, 2009, 1998, 1987, 1985, 2002, 2007, 1997, 2004])</pre>
+<pre>1985    1463
+1987     932
+1999     930
+1997     930
+2004     930
+2002     929
+2009     928
+2007     926
+1998     555
+Name: Outlet_Establishment_Year, dtype: int64</pre>
 </div>
 
 </div>
@@ -13610,7 +13638,7 @@ Name: Item_Visibility, Length: 8523, dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Outlet_Size&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Outlet_Size&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13629,7 +13657,10 @@ Name: Item_Visibility, Length: 8523, dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([&#39;Medium&#39;, nan, &#39;High&#39;, &#39;Small&#39;], dtype=object)</pre>
+<pre>Medium    2793
+Small     2388
+High       932
+Name: Outlet_Size, dtype: int64</pre>
 </div>
 
 </div>
@@ -13643,7 +13674,7 @@ Name: Item_Visibility, Length: 8523, dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Outlet_Location_Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Outlet_Location_Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13662,7 +13693,10 @@ Name: Item_Visibility, Length: 8523, dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([&#39;Tier 1&#39;, &#39;Tier 3&#39;, &#39;Tier 2&#39;], dtype=object)</pre>
+<pre>Tier 3    3350
+Tier 2    2785
+Tier 1    2388
+Name: Outlet_Location_Type, dtype: int64</pre>
 </div>
 
 </div>
@@ -13676,7 +13710,7 @@ Name: Item_Visibility, Length: 8523, dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Outlet_Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Outlet_Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13695,8 +13729,11 @@ Name: Item_Visibility, Length: 8523, dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([&#39;Supermarket Type1&#39;, &#39;Supermarket Type2&#39;, &#39;Grocery Store&#39;,
-       &#39;Supermarket Type3&#39;], dtype=object)</pre>
+<pre>Supermarket Type1    5577
+Grocery Store        1083
+Supermarket Type3     935
+Supermarket Type2     928
+Name: Outlet_Type, dtype: int64</pre>
 </div>
 
 </div>
@@ -13796,7 +13833,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[222]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
@@ -13836,6 +13873,7 @@ dtype: int64</pre>
 <ul>
 <li>as we can see there is tons of outliers.</li>
 </ul>
+<hr>
 
 </div>
 </div>
@@ -13868,7 +13906,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Fat_Content&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Fat_Content&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13887,7 +13925,11 @@ dtype: int64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([&#39;low fat&#39;, &#39;regular&#39;, &#39;lf&#39;, &#39;reg&#39;], dtype=object)</pre>
+<pre>low fat    5201
+regular    2889
+lf          316
+reg         117
+Name: Item_Fat_Content, dtype: int64</pre>
 </div>
 
 </div>
@@ -13914,7 +13956,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Fat_Content&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Fat_Content&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13933,7 +13975,9 @@ dtype: int64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([&#39;low fat&#39;, &#39;regular&#39;], dtype=object)</pre>
+<pre>low fat    5517
+regular    3006
+Name: Item_Fat_Content, dtype: int64</pre>
 </div>
 
 </div>
@@ -13952,7 +13996,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">iqr</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">],</span><span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;midpoint&#39;</span><span class="p">)</span>
@@ -13969,7 +14013,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[70]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -13986,11 +14030,11 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">upper_limit_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">],</span><span class="mi">75</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">q</span>
-<span class="n">upper_limit</span>
+<span class="n">upper_limit_1</span>
 </pre></div>
 
     </div>
@@ -14003,13 +14047,13 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[71]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>6278.8269</pre>
+<pre>6501.8699</pre>
 </div>
 
 </div>
@@ -14020,10 +14064,10 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[220]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">upper_limit</span><span class="p">][</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">upper_limit_1</span><span class="p">][</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -14043,7 +14087,7 @@ dtype: int64</pre>
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -14056,10 +14100,10 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">upper_limit</span><span class="p">][</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">upper_limit_1</span><span class="p">][</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
 <span class="n">x</span>
 </pre></div>
 
@@ -14073,7 +14117,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[68]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -14101,7 +14145,7 @@ Name: Item_Outlet_Sales, Length: 8337, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">iqr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;midpoint&#39;</span><span class="p">)</span>
@@ -14119,7 +14163,7 @@ Name: Item_Outlet_Sales, Length: 8337, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[69]:</div>
+    <div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -14146,10 +14190,11 @@ Name: Item_Outlet_Sales, Length: 8337, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">train</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">upper_limit_1</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
@@ -14162,6 +14207,18 @@ Name: Item_Outlet_Sales, Length: 8337, dtype: float64</pre>
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>CPU times: user 77.4 ms, sys: 3.28 ms, total: 80.6 ms
+Wall time: 114 ms
+</pre>
+</div>
+</div>
 
 <div class="output_area">
 
@@ -14184,7 +14241,7 @@ Name: Item_Outlet_Sales, Length: 8337, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper_limit</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
@@ -14200,7 +14257,7 @@ Name: Item_Outlet_Sales, Length: 8337, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[94]:</div>
+    <div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -14225,7 +14282,7 @@ Name: Item_Outlet_Sales, Length: 8337, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper_limit</span><span class="p">][</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">size</span>
@@ -14241,7 +14298,7 @@ Name: Item_Outlet_Sales, Length: 8337, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[102]:</div>
+    <div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -14259,6 +14316,45 @@ Name: Item_Outlet_Sales, Length: 8337, dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>importing data with the missing values.</li>
+<li>it's important to record the missing values from some of our rows so we can trace them and investigate them later on.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">missin_weight_values</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Item_Weight&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+<span class="n">missin_weight_values</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;missin_weight_values&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">missing_Outlet_Size_values</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Outlet_Size&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+<span class="n">missing_Outlet_Size_values</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;missing_outliet_size_values&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <h2 id="Analysis-and-Visualizations">Analysis and Visualizations<a class="anchor-link" href="#Analysis-and-Visualizations">&#182;</a></h2>
 </div>
@@ -14266,7 +14362,7 @@ Name: Item_Outlet_Sales, Length: 8337, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -14315,7 +14411,7 @@ memory usage: 799.2+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[237]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Outlet_Type&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s2">&quot;Item_Outlet_Sales&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -14363,7 +14459,7 @@ memory usage: 799.2+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[236]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Item_Identifier&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s2">&quot;Item_Outlet_Sales&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
@@ -14409,7 +14505,7 @@ memory usage: 799.2+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[235]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Outlet_Location_Type&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s2">&quot;Item_Outlet_Sales&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
@@ -14455,7 +14551,7 @@ memory usage: 799.2+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[146]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Item_Identifier&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">]</span>
@@ -14472,7 +14568,7 @@ memory usage: 799.2+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[146]:</div>
+    <div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -14501,7 +14597,7 @@ Name: Item_Outlet_Sales, Length: 1559, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[166]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">train</span><span class="p">[[</span><span class="s1">&#39;Item_Identifier&#39;</span><span class="p">,</span><span class="s1">&#39;Item_Weight&#39;</span><span class="p">,</span><span class="s1">&#39;Item_Visibility&#39;</span><span class="p">,</span><span class="s1">&#39;Item_MRP&#39;</span><span class="p">,</span><span class="s1">&#39;Item_Outlet_Sales&#39;</span><span class="p">]]</span>
@@ -14518,7 +14614,7 @@ Name: Item_Outlet_Sales, Length: 1559, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[166]:</div>
+    <div class="prompt output_prompt">Out[35]:</div>
 
 
 
@@ -14537,7 +14633,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[225]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
@@ -14586,7 +14682,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[238]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Item_Fat_Content&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s2">&quot;Item_Outlet_Sales&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
@@ -14645,6 +14741,7 @@ dtype: int64</pre>
 <li>weight has no effect on sales.</li>
 <li>0~12 is the ideal visibility for Items to boost their sales.</li>
 </ul>
+<hr>
 
 </div>
 </div>
@@ -14653,24 +14750,22 @@ dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Limitations-and-Issues">Limitations and Issues<a class="anchor-link" href="#Limitations-and-Issues">&#182;</a></h1><ul>
-<li>Outliers<blockquote><p>there are some noticible outliers in our data (2.6% percent of our data,225 observations) that may affect the results of our analysis and their accuracy as seen in the <a href="#Issues-in-Our-Data-are-as-follows:">issues phase</a>.</p>
+<li><p>Outliers</p>
+<blockquote><p>there are some noticible outliers in our data (2.6% percent of our data,225 observations) that may affect the results of our analysis and their accuracy as seen in the <a href="#Issues-in-Our-Data-are-as-follows:">issues phase</a>.</p>
 </blockquote>
 </li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Missing supplied items data.<blockquote><p>to make this analysis more accurate we need to include how many items and have been shipped to the market and include more information about the market not only the sales 
+<li><p>Missing supplied items data.</p>
+<blockquote><p>to make this analysis more accurate we need to include how many items and have been shipped to the market and include more information about the market not only the sales 
 for example:
-we have calculated the most selling items but we didn't compare its sales to their total shipments and supplies to the market and this may be misleading.</p>
+we have calculated the most selling items but we didn't compare its sales to their total shipments and supplies to the market and this may be misleading</p>
+</blockquote>
+</li>
+<li><p>missing values in weight and outlet size columns</p>
+<blockquote><p>some of our rows has no values about their outlet size and weight that will impact their analysis, the missing info for these records can be found in <code>missin_weight_values.csv</code> and <code>missing_outliet_size_values.csv</code> files, it's important to investigate these data to know why some values of our observations are missing and try to fill them and trace them based on other properties recorded for these observations.</p>
 </blockquote>
 </li>
 </ul>
+<hr>
 
 </div>
 </div>
