@@ -6,4 +6,4 @@
     
     `train.csv`
 
-* You can find all the analysis in `Train.ipynb` if you don't know how to render notebooks just open the `HTML` format of it in `Train.html`
+* You can find all the analysis in `Train.ipynb` if you don't know how to render notebooks just open the `HTML` format of it in `TrainLight.html`, `TrainDark.html`.
